@@ -58,13 +58,13 @@ void printTicket(int customerId, const Customer& customer, const Flight& flight)
 	 {
         outf<<"<------------ Airline Ticket ------------>\n";
         outf<<"Customer ID:    \t"<<customer.customerId << endl;
-        outf<<"Customer Name:  \t"<<customer.name << endl;
-        outf<<"Customer Gender:\t"<<customer.gender << endl;
-        outf<<"Flight Number:  \t"<<flight.flightNumber << endl;
-        outf<<"Destination:    \t"<<flight.destination << endl;
-        outf<<"Departure Time: \t"<<flight.departureTime << endl;
-        outf<<"Duration:       \t"<<flight.duration << " hours" << endl;
-        outf<<"Price:Rs.       \t"<<flight.price << endl;
+        outf<<"Customer Name:  \t"<<customer.name<<endl;
+        outf<<"Customer Gender:\t"<<customer.gender<<endl;
+        outf<<"Flight Number:  \t"<<flight.flightNumber<<endl;
+        outf<<"Destination:    \t"<<flight.destination<<endl;
+        outf<<"Departure Time: \t"<<flight.departureTime<<endl;
+        outf<<"Duration:       \t"<<flight.duration << " hours" <<endl;
+        outf<<"Price:          \t Rs."<<flight.price<<endl;
     }
     outf.close();
     cout<<"\n\n\n\n\n\n\n";
@@ -77,13 +77,13 @@ void displayTicket(int customerId, const Customer& customer, const Flight& fligh
     system("cls");
 	cout<<"\n\n\n\n\n\n\n"<<endl;
     cout<<"\t\t\t\t\t\t\t <------------ Airline Ticket ------------>\n";
-    cout<<"\t\t\t\t\t\t\t Customer ID:        "<<customer.customerId << endl;
+    cout<<"\t\t\t\t\t\t\t Customer ID:        "<<customer.customerId<<endl;
     cout<<"\t\t\t\t\t\t\t Customer Name:     "<<customer.name<<endl;
     cout<<"\t\t\t\t\t\t\t Customer Gender:    "<<customer.gender<<endl;
     cout<<"\t\t\t\t\t\t\t Flight Number:      "<<flight.flightNumber<<endl;
     cout<<"\t\t\t\t\t\t\t Destination:        "<<flight.destination<<endl;
     cout<<"\t\t\t\t\t\t\t Departure Time:     "<<flight.departureTime<<endl;
-    cout<<"\t\t\t\t\t\t\t Duration:           "<<flight.duration <<" hours"<< endl;
+    cout<<"\t\t\t\t\t\t\t Duration:           "<<flight.duration<<" hours"<<endl;
     cout<<"\t\t\t\t\t\t\t Price:             Rs."<<flight.price<<endl;
 }
 
