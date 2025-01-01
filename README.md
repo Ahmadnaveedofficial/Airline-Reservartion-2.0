@@ -181,15 +181,13 @@ void mainMenu()
 	{
     	
         cout<<"\t\t\t\t\t\t\t                  " << endl;
-        cout<<"\t\t\t\t\t\t\t  ---------------- Main Menu -----------------" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t\t\t\t\t      |" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t 1. View Available Flights            |" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t 2. Book a Flight                     |" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t 3. Print Ticket                      |" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t 4. What We Are?                      |" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t 5. Exit                              |" << endl;
-        cout<<"\t\t\t\t\t\t\t |\t\t\t\t\t      |" << endl;
-        cout<<"\t\t\t\t\t\t\t  --------------------------------------------\n" << endl;
+        cout<<"\t\t\t\t\t\t\t<---------- WELCOME TO OUR AIRLINE ---------->\n" << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [1] View Available Flights             " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [2] Book a Flight                      " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [3] Print Ticket                       " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [4] What We Are?                       " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [5] Exit                               " << endl;
+       cout<<"\n";
         cout<<"Enter your choice: ";
         cin>>choice;
         cout<<"\n";
