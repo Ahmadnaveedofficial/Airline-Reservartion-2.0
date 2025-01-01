@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <conio.h>
 
 using namespace std;
 
@@ -25,9 +26,12 @@ struct Customer
 };
 
 void inputCustomerDetails(Customer& customer) 
-{          
+{     
+    system("cls");
+     cout<<"\n\n\n\n\n\n\n";
+     cout<<"\t\t\t\t\t\t\t<--------------- CUSTOMER DETAILS FORM --------------->\n\n";
     cout<<"\t\t\t\t\t\t\tEnter Customer ID: ";
-    cin>> customer.customerId;
+    cin>>customer.customerId;
     cin.ignore();
     cout<<"\t\t\t\t\t\t\tEnter Name: ";
     getline(cin, customer.name);
@@ -41,11 +45,14 @@ void inputCustomerDetails(Customer& customer)
     cout<<"\t\t\t\t\t\t\tEnter Phone Number: ";
     getline(cin, customer.phone);
     cout<<"\n";
-    cout<<"\t\t\t\t\t\t\tCustomer details saved successfully!" << endl;
+    cout<<"\t\t\t\t\t\t\tCustomer details saved successfully!"<<endl;
+    cout<<"\n\n";
+    system("pause");
 }
 
 void printTicket(int customerId, const Customer& customer, const Flight& flight) 
-{
+{   
+    system("cls");
     ofstream outf("ticket.txt");
     if (outf.is_open())
 	 {
@@ -60,56 +67,52 @@ void printTicket(int customerId, const Customer& customer, const Flight& flight)
         outf<<"Price:Rs.       \t"<<flight.price << endl;
     }
     outf.close();
-    cout << "Ticket has been printed! Check 'ticket.txt'.\n";
+    cout<<"\n\n\n\n\n\n\n";
+    cout << "\t\t\t\t\t\t\tTicket has been printed! Check 'ticket.txt'.\n";
+
 }
 
 void displayTicket(int customerId, const Customer& customer, const Flight& flight) 
 {        
-
-	cout<<"\n"<<endl;
+    system("cls");
+	cout<<"\n\n\n\n\n\n\n"<<endl;
     cout<<"\t\t\t\t\t\t\t <------------ Airline Ticket ------------>\n";
-    cout<<"\t\t\t\t\t\t\t Customer ID:       "<<customer.customerId << endl;
+    cout<<"\t\t\t\t\t\t\t Customer ID:        "<<customer.customerId << endl;
     cout<<"\t\t\t\t\t\t\t Customer Name:     "<<customer.name<<endl;
-    cout<<"\t\t\t\t\t\t\t Customer Gender:   "<<customer.gender<<endl;
-    cout<<"\t\t\t\t\t\t\t Flight Number:     "<<flight.flightNumber<<endl;
-    cout<<"\t\t\t\t\t\t\t Destination:      "<<flight.destination<<endl;
-    cout<<"\t\t\t\t\t\t\t Departure Time:    "<<flight.departureTime<<endl;
-    cout<<"\t\t\t\t\t\t\t Duration:          "<<flight.duration <<" hours"<< endl;
+    cout<<"\t\t\t\t\t\t\t Customer Gender:    "<<customer.gender<<endl;
+    cout<<"\t\t\t\t\t\t\t Flight Number:      "<<flight.flightNumber<<endl;
+    cout<<"\t\t\t\t\t\t\t Destination:        "<<flight.destination<<endl;
+    cout<<"\t\t\t\t\t\t\t Departure Time:     "<<flight.departureTime<<endl;
+    cout<<"\t\t\t\t\t\t\t Duration:           "<<flight.duration <<" hours"<< endl;
     cout<<"\t\t\t\t\t\t\t Price:             Rs."<<flight.price<<endl;
 }
 
-void initializeAndDisplayFlights(Flight flights[], int& flightCount)
- { 
- 
-flights[0] = {"Pk-498", "  Dubai", "08-12-2024 7:40PM", "04", 14000 }; 
-flights[1] = {"Pk-198", "  Canada", "22-01-2024 5:40AM", "16", 34000 };
-flights[2] = {"Pk-798", "  UK", "09-12-2024 7:40PM", "14", 44000 }; 
-flights[3] = {"Pk-578", "  USA", "25-02-2024 5:40AM", "18", 94000 }; 
-flights[4] = {"Pk-898", "  Australia", "22-01-2024 5:40AM", "16", 64000 }; 
-flights[5] = {"Pk-348", "  Europe", "22-01-2024 5:40AM", "07", 78000 }; 
-flightCount = 6; 
-
-
-cout<<left<<setw(10)<<"Flight No"<<setw(15)<<"  Destination"
- <<setw(20)<<"  Departure"<<setw(10)<<"Duration\t"
- <<"Price"<<endl; 
-for (int i = 0; i < flightCount; ++i) 
-{ 
-cout<<left<<setw(10)<<flights[i].flightNumber 
-<<setw(15)<<flights[i].destination 
-<<setw(20)<<flights[i].departureTime 
-<<flights[i].duration<<setw(10)<<" hours" 
-<<"Rs."<< flights[i].price << endl;
-}
-
-}
-
-
-
- 
  void bookAndAddDetails(Customer& customer, Flight flights[], int flightCount, int& ticketId, bool& flightBooked, Flight& selectedFlight)
  {
- cout<<"\t\t\t\t\t\t\tSelect a flight by entering the flight number: ";
+ 	    system("cls");
+                  flights[0] = {"Pk-498", "  Dubai", "08-12-2024 7:40PM", " 04", 14000 }; 
+                  flights[1] = {"Pk-198", "  Canada", "22-01-2024 5:40AM", " 16", 34000 };
+                  flights[2] = {"Pk-798", "  UK", "09-12-2024 7:40PM", " 14", 44000 }; 
+                  flights[3] = {"Pk-578", "  USA", "25-02-2024 5:40AM", " 18", 94000 }; 
+                  flights[4] = {"Pk-898", "  Australia", "22-01-2024 5:40AM", " 16", 64000 }; 
+                  flights[5] = {"Pk-348", "  Europe", "22-01-2024 5:40AM", " 07", 78000 }; 
+                  flightCount = 6; 
+
+     cout<<"\n\n\n\n\n\n\n";
+    cout<<left<<setw(20)<<"\t\t\tFlight No"<<setw(10)<<" \tDestination"
+   <<setw(20)<<"\t\t   Departure"<<setw(10)<<"\t Duration"
+      <<"       Price"<<endl; 
+    for (int i=0;i<flightCount;++i) 
+     { 
+            cout<<left<<setw(10)<<"\t\t"
+			<<flights[i].flightNumber 
+            <<setw(15)<<"\t"<<flights[i].destination 
+			<<setw(20)<<"\t"<<flights[i].departureTime 
+           <<"\t"<<flights[i].duration<<setw(10)<<" hours" 
+       <<"\t"  <<"Rs."<< flights[i].price << endl;
+    }
+
+ cout<<"\n\t\t\t\t\t\t\tSelect a flight by entering the flight number: ";
  
          string selectedFlightNumber; 
         cin>>selectedFlightNumber; 
@@ -135,11 +138,13 @@ for(int i = 0; i < flightCount; ++i)
         { 
                 cout<<"\n\t\t\t\t\t\t\tInvalid flight number! Please try again.\n";
         }
+        system("pause");
 }
 
 
 void printBookedTicket(int ticketId, bool flightBooked, const Customer& customer, const Flight& selectedFlight)
  { 
+    system("cls");
       if (flightBooked) 
     {
        cout<<"\n"; 
@@ -147,22 +152,37 @@ void printBookedTicket(int ticketId, bool flightBooked, const Customer& customer
     } 
        else 
     { 
-       cout<<"\n\t\t\t\t\t\t\tNo ticket has been booked yet.\n"; 
+       cout<<"\n\n\n\n\n\n\n\t\t\t\t\t\t\tNo ticket has been booked yet.\n"; 
     }
+    system("pause");
  }
 
 void aboutUs()
  {
-   
-    cout<<"\n\n\n\n\n"
-        <<"\t\t\t\t\t\t\t<------------------------- About Us ------------------------->\n"
-        <<"\n\t\t\t\t\t\tWelcome to Pakistan International Airline, where your journey matters. \n"
-        <<"\t\t\t\t\t\tExperience unmatched comfort and exceptional service on every flight.\n"
-        <<"\n\t\t\t\t\tOur airline was founded by visionaries:\n"
-        <<"\t\t\t\t\t\tAhmad with a passion for aviation and excellence. — \n"
-        <<"\t\t\t\t\tWe are committed to providing a safe, efficient, and enjoyable travel experience.\n"
-        <<"\n\t\t\t\t\t\t<----------------------------------------------------------->\n";
-       
+    system("cls");
+    cout << "\n\n\n\n\n\n\n"
+     << "\t\t\t\t\t<-------------------------------- About Us ------------------------------->\n"
+     << "\n\t\t\t\t\tWelcome to Hazel Blue Airline where we believe that every journey is more\n"
+     << "\t\t\t\t\tthan just reaching a destination. Your safety, connection, and comfort\n"
+     << "\t\t\t\t\tare our priorities. We believe that aviation is proof that with\n"
+     << "\t\t\t\t\tdetermination, we have the capacity to achieve the impossible.\n"
+     << "\n\t\t\t\t\tThis airline was founded by four members whose names are given below:\n"
+     << "\t\t\t\t\tAhmad, Saqib, Ali, and Rehman, with a passion for aviation and excellence.\n"
+     << "\t\t\t\t\tTogether, we navigate the skies with ease and comfort, creating unforgettable\n"
+     << "\t\t\t\t\tjourneys with you.\n"
+     << "\n\t\t\t\t\t<------------------------------------------------------------------------>\n";
+
+//    cout<<"\n\n\n\n\n"
+//        <<"\t\t\t\t\t\t\t<-------------------------------- About Us ------------------------------->\n"
+//        <<"\n\t\t\t\t\t\tWelcome to Hazel Blue Airline where we believe that every journey is more \n"
+//        <<"\t\t\t\t\t\t\t than just reaching a destination Your safety, connection and comfort \n"
+//        <<"\t\t\t\t\t\t\tis our priority. Our airline also believe that aviation is proof that with "
+//        <<"\n\t\t\t\tdetermination we have the capacity to achieve the impossible.\n"
+//        <<"\n\t\t\t\t\t\tThis airline was founded by four members whose names are given below: \n"
+//        <<"\t\t\t\t\t\t Ahmad, Saqib, Ukasha and Unbreen with a passion for aviation and excellence. \n"
+//        <<"\t\t\t\t\tTogether we navigate the skies with ease and comfort and create unforgettable journey with you people.\n"
+//        <<"\n\t\t\t\t\t\t<---------------------------------------------------------------------->\n";
+       system("pause");
     }
         
         
@@ -174,19 +194,19 @@ void mainMenu()
    Customer customer; 
    Flight flights[10];
     int flightCount = 0; 
-	initializeAndDisplayFlights(flights, flightCount); 
+//	initializeAndDisplayFlights(flights, flightCount); 
 	Flight selectedFlight;
 	 bool flightBooked = false;
     do 
 	{
-    	
-        cout<<"\t\t\t\t\t\t\t                  " << endl;
+     system("cls");
+        cout<<"\n\n\n\n\n\n\n                 " << endl;
         cout<<"\t\t\t\t\t\t\t<---------- WELCOME TO OUR AIRLINE ---------->\n" << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [1] View Available Flights             " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [2] Book a Flight                      " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [3] Print Ticket                       " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [4] What We Are?                       " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [5] Exit                               " << endl;
+//        cout<<"\t\t\t\t\t\t\t\t  [1] View Available Flights             " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [1] Book a Flight                      " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [2] Print Ticket                       " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [3] What We Are?                       " << endl;
+        cout<<"\t\t\t\t\t\t\t\t  [4] Exit                               " << endl;
        cout<<"\n";
         cout<<"Enter your choice: ";
         cin>>choice;
@@ -194,34 +214,35 @@ void mainMenu()
 
         switch(choice) 
 		{
+//          case 1:
+//        	{
+//			
+////        	  cout<<"\t\t\t\t\t\t\tAvailable Flights:\n\n";
+////               initializeAndDisplayFlights (flights, flightCount);
+//            }
+//            break;
+          
           case 1:
-        	{
-			
-        	  cout<<"\t\t\t\t\t\t\tAvailable Flights:\n\n";
-               initializeAndDisplayFlights (flights, flightCount);
-            }
-            break;
-          case 2:
 		    {    
 		    bookAndAddDetails(customer,  flights,  flightCount,  ticketId, flightBooked,  selectedFlight);
 		     }
             break;
        
-        case 3:
+        case 2:
         	{
            printBookedTicket( ticketId, flightBooked,  customer,  selectedFlight);
            	}
             break;
-       case 4:
+       case 3:
        	  {
        		aboutUs();
 		   }
             	
             	break;
             	
-        case 5:
+        case 4:
         	{
-        		cout<<"\t\t\t\t\t\t\tThank you for using Pakistan International Airline!\n";
+        		cout<<"\t\t\t\t\t\t\tThank you for using Hazel Blue  Airline!\n";
 			}
             
             break;
@@ -229,11 +250,12 @@ void mainMenu()
         {
         	 cout<<"\n\t\t\t\t\t\t\tInvalid choice! Please try again.\n";
 		}
+		system("pause");
            
         }
         
         
-    } while(choice != 5);
+    } while(choice != 4);
 }
 
 
@@ -242,7 +264,7 @@ int main()
  	  
     system("color F0"); 
     cout<<"\n\n\n\n";
-cout<<"\t\t\t\t\t\t\t    Welcome to Pakistan International Airline  \n\n"<<endl; 
+//cout<<"\t\t\t\t\t\t\t          Hazel Blue Airline   \n\n"<<endl; 
     mainMenu();
     
     return 0;
