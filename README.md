@@ -161,27 +161,17 @@ void aboutUs()
  {
     system("cls");
     cout << "\n\n\n\n\n\n\n"
-     << "\t\t\t\t\t<-------------------------------- About Us ------------------------------->\n"
-     << "\n\t\t\t\t\tWelcome to Hazel Blue Airline where we believe that every journey is more\n"
-     << "\t\t\t\t\tthan just reaching a destination. Your safety, connection, and comfort\n"
-     << "\t\t\t\t\tare our priorities. We believe that aviation is proof that with\n"
-     << "\t\t\t\t\tdetermination, we have the capacity to achieve the impossible.\n"
-     << "\n\t\t\t\t\tThis airline was founded by four members whose names are given below:\n"
-     << "\t\t\t\t\tAhmad, Saqib, Ali, and Rehman, with a passion for aviation and excellence.\n"
-     << "\t\t\t\t\tTogether, we navigate the skies with ease and comfort, creating unforgettable\n"
-     << "\t\t\t\t\tjourneys with you.\n"
-     << "\n\t\t\t\t\t<------------------------------------------------------------------------>\n";
-
-//    cout<<"\n\n\n\n\n"
-//        <<"\t\t\t\t\t\t\t<-------------------------------- About Us ------------------------------->\n"
-//        <<"\n\t\t\t\t\t\tWelcome to Hazel Blue Airline where we believe that every journey is more \n"
-//        <<"\t\t\t\t\t\t\t than just reaching a destination Your safety, connection and comfort \n"
-//        <<"\t\t\t\t\t\t\tis our priority. Our airline also believe that aviation is proof that with "
-//        <<"\n\t\t\t\tdetermination we have the capacity to achieve the impossible.\n"
-//        <<"\n\t\t\t\t\t\tThis airline was founded by four members whose names are given below: \n"
-//        <<"\t\t\t\t\t\t Ahmad, Saqib, Ukasha and Unbreen with a passion for aviation and excellence. \n"
-//        <<"\t\t\t\t\tTogether we navigate the skies with ease and comfort and create unforgettable journey with you people.\n"
-//        <<"\n\t\t\t\t\t\t<---------------------------------------------------------------------->\n";
+     <<"\t\t\t\t\t<-------------------------------- About Us ------------------------------->\n"
+     <<"\n\t\t\t\t\tWelcome to Hazel Blue Airline where we believe that every journey is more\n"
+     <<"\t\t\t\t\tthan just reaching a destination. Your safety, connection, and comfort\n"
+     <<"\t\t\t\t\tare our priorities. We believe that aviation is proof that with\n"
+     <<"\t\t\t\t\tdetermination, we have the capacity to achieve the impossible.\n"
+     <<"\n\t\t\t\t\tThis airline was founded by four members whose names are given below:\n"
+     <<"\t\t\t\t\tAhmad, Saqib, Ali, and Rehman, with a passion for aviation and excellence.\n"
+     <<"\t\t\t\t\tTogether, we navigate the skies with ease and comfort, creating unforgettable\n"
+     <<"\t\t\t\t\tjourneys with you.\n"
+     <<"\n\t\t\t\t\t<------------------------------------------------------------------------>\n";
+     
        system("pause");
     }
         
@@ -194,19 +184,18 @@ void mainMenu()
    Customer customer; 
    Flight flights[10];
     int flightCount = 0; 
-//	initializeAndDisplayFlights(flights, flightCount); 
+
 	Flight selectedFlight;
 	 bool flightBooked = false;
     do 
 	{
      system("cls");
         cout<<"\n\n\n\n\n\n\n                 " << endl;
-        cout<<"\t\t\t\t\t\t\t<---------- WELCOME TO OUR AIRLINE ---------->\n" << endl;
-//        cout<<"\t\t\t\t\t\t\t\t  [1] View Available Flights             " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [1] Book a Flight                      " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [2] Print Ticket                       " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [3] What We Are?                       " << endl;
-        cout<<"\t\t\t\t\t\t\t\t  [4] Exit                               " << endl;
+        cout<<"\t\t\t\t\t\t\t<---------- WELCOME TO OUR HAZEL BLUE AIRLINE ---------->\n" << endl;
+        cout<<"\t\t\t\t\t\t\t\t        [1] Book a Flight                      " << endl;
+        cout<<"\t\t\t\t\t\t\t\t        [2] Print Ticket                       " << endl;
+        cout<<"\t\t\t\t\t\t\t\t        [3] What We Are?                       " << endl;
+        cout<<"\t\t\t\t\t\t\t\t        [4] Exit                               " << endl;
        cout<<"\n";
         cout<<"Enter your choice: ";
         cin>>choice;
@@ -214,14 +203,6 @@ void mainMenu()
 
         switch(choice) 
 		{
-//          case 1:
-//        	{
-//			
-////        	  cout<<"\t\t\t\t\t\t\tAvailable Flights:\n\n";
-////               initializeAndDisplayFlights (flights, flightCount);
-//            }
-//            break;
-          
           case 1:
 		    {    
 		    bookAndAddDetails(customer,  flights,  flightCount,  ticketId, flightBooked,  selectedFlight);
@@ -242,7 +223,7 @@ void mainMenu()
             	
         case 4:
         	{
-        		cout<<"\t\t\t\t\t\t\tThank you for using Hazel Blue  Airline!\n";
+        		cout<<"\t\t\t\t\t\t\tThank you for using Hazel Blue Airline!\n";
 			}
             
             break;
@@ -261,11 +242,8 @@ void mainMenu()
 
 int main()
  {
- 	  
     system("color F0"); 
-    cout<<"\n\n\n\n";
-//cout<<"\t\t\t\t\t\t\t          Hazel Blue Airline   \n\n"<<endl; 
     mainMenu();
-    
+
     return 0;
 }
