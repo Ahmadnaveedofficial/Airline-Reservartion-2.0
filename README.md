@@ -90,24 +90,24 @@ void displayTicket(int customerId, const Customer& customer, const Flight& fligh
  void bookAndAddDetails(Customer& customer, Flight flights[], int flightCount, int& ticketId, bool& flightBooked, Flight& selectedFlight)
  {
  	    system("cls");
-                  flights[0] = {"Pk-498", "  Dubai", "08-12-2024 7:40PM", " 04", 14000 }; 
-                  flights[1] = {"Pk-198", "  Canada", "22-01-2024 5:40AM", " 16", 34000 };
-                  flights[2] = {"Pk-798", "  UK", "09-12-2024 7:40PM", " 14", 44000 }; 
-                  flights[3] = {"Pk-578", "  USA", "25-02-2024 5:40AM", " 18", 94000 }; 
-                  flights[4] = {"Pk-898", "  Australia", "22-01-2024 5:40AM", " 16", 64000 }; 
-                  flights[5] = {"Pk-348", "  Europe", "22-01-2024 5:40AM", " 07", 78000 }; 
+                  flights[0] = {"Pk-498", "   Dubai", "08-12-2024 7:40PM", " 04", 14000 }; 
+                  flights[1] = {"Pk-198", "   Canada", "22-01-2024 5:40AM", " 16", 34000 };
+                  flights[2] = {"Pk-798", "   UK", "09-12-2024 7:40PM", " 14", 44000 }; 
+                  flights[3] = {"Pk-578", "   USA", "25-02-2024 5:40AM", " 18", 94000 }; 
+                  flights[4] = {"Pk-898", "   Bali", "22-01-2024 5:40AM", " 16", 64000 }; 
+                  flights[5] = {"Pk-348", "   Europe", "22-01-2024 5:40AM", " 07", 78000 }; 
                   flightCount = 6; 
 
      cout<<"\n\n\n\n\n\n\n";
-    cout<<left<<setw(20)<<"\t\t\tFlight No"<<setw(10)<<" \tDestination"
-   <<setw(20)<<"\t\t   Departure"<<setw(10)<<"\t Duration"
+    cout<<left<<setw(20)<<"\t\t\t     Flight No"<<setw(10)<<"\tDestination"
+   <<setw(20)<<"\t Departure"<<setw(10)<<"\t Duration"
       <<"       Price"<<endl; 
     for (int i=0;i<flightCount;++i) 
      { 
-            cout<<left<<setw(10)<<"\t\t"
+            cout<<left<<setw(15)<<"\t\t"
 			<<flights[i].flightNumber 
-            <<setw(15)<<"\t"<<flights[i].destination 
-			<<setw(20)<<"\t"<<flights[i].departureTime 
+            <<setw(10)<<" "<<flights[i].destination 
+			<<setw(10)<<"\t"<<flights[i].departureTime 
            <<"\t"<<flights[i].duration<<setw(10)<<" hours" 
        <<"\t"  <<"Rs."<< flights[i].price << endl;
     }
